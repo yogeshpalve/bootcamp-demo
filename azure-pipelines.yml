@@ -33,7 +33,7 @@ steps:
     dockerRegistryEndpoint: dockerHub
     imageName: $(imageName)
 - script: |
-    sed 's/{tag}/$(build.buildId)/' manifests/deployment.yml
+    sed -i 's/{tag}/$(build.buildId)/' manifests/deployment.yml
     cat manifests/deployment.yml
 - task: KubernetesManifestBased@1
   displayName: deploy
