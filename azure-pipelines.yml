@@ -32,13 +32,3 @@ steps:
     containerregistrytype: Container Registry
     dockerRegistryEndpoint: dockerHub
     imageName: $(imageName)
-- script: |
-    sed -i 's/{tag}/$(build.buildId)/' manifests/deployment.yml
-    cat manifests/deployment.yml
-- task: KubernetesManifestBased@1
-  displayName: Deploy to Kubernetes
-  inputs:
-    kubernetesServiceEndpoint: k8sSC
-    manifests: manifests/*
-    deploymentStrategy: canary
-    percentage: 25
