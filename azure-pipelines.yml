@@ -36,7 +36,9 @@ steps:
     sed -i 's/{tag}/$(build.buildId)/' manifests/deployment.yml
     cat manifests/deployment.yml
 - task: KubernetesManifestBased@1
-  displayName: deploy
+  displayName: Deploy to Kubernetes
   inputs:
     kubernetesServiceEndpoint: k8sSC
     manifests: manifests/*
+    strategy: canary
+    percentage: 25
