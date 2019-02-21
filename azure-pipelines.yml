@@ -10,7 +10,6 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  System.Debug: true
   imageName: 'shashankbarsin/bootcamp-demo:$(build.buildId)'
 
 steps:
