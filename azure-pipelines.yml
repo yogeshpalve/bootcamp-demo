@@ -37,4 +37,4 @@ steps:
   inputs:
     kubernetesServiceEndpoint: k8sSC
     manifests: manifests/*
-    containers: index.docker.io/$(imageName)
+    containers: index.docker.io/shashankbarsin/bootcamp-demo:$(build.buildId)
