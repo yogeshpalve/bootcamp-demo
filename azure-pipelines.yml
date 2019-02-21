@@ -13,5 +13,9 @@ variables:
   imageName: 'shashankbarsin/bootcamp-demo:$(build.buildId)'
 
 steps:
-- script: docker build -f app/Dockerfile -t $(imageName) ./app
-  displayName: 'docker build'
+- task: Docker@1
+  displayName: Build image
+  inputs:
+    command: build
+    dockerFile: app/Dockerfile
+    imageName: $(imageName)
