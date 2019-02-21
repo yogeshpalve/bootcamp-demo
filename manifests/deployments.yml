@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bootcamp-demo
+  labels:
+    app: bootcamp-demo
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: bootcamp-demo
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        app: bootcamp-demo
+    spec:
+      containers:
+      - name: bootcamp-demo
+        image: index.docker.io/shashankbarsin/bootcamp-demo
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        - containerPort: 8080

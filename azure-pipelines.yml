@@ -32,3 +32,9 @@ steps:
     containerregistrytype: Container Registry
     dockerRegistryEndpoint: dockerHub
     imageName: $(imageName)
+- task: KubernetesManifestBased@1
+  displayName: deploy
+  inputs:
+    kubernetesServiceEndpoint: k8sSC
+    manifests: manifests/*
+    containers: index.docker.io/$(imageName)
