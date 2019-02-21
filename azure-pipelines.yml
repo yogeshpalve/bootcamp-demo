@@ -36,5 +36,10 @@ steps:
   displayName: deploy
   inputs:
     kubernetesServiceEndpoint: k8sSC
-    manifests: manifests/*
+    manifests: manifests/deployment.yml
     containers: index.docker.io/shashankbarsin/bootcamp-demo:$(build.buildId)
+- task: KubernetesManifestBased@1
+  displayName: deploy
+  inputs:
+    kubernetesServiceEndpoint: k8sSC
+    manifests: manifests/service.yml
