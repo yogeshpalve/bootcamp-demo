@@ -40,5 +40,5 @@ steps:
   inputs:
     kubernetesServiceEndpoint: k8sSC
     manifests: manifests/*
-    strategy: Canary
+    deploymentStrategy: canary
     percentage: 25
