@@ -5,10 +5,7 @@ metadata:
   labels:
     app: bootcamp-demo
     company: smart-hotel
-    service: python
     author: barsin
-    backend: false
-    frontend: true
 spec:
   replicas: 4
   selector:
@@ -21,11 +18,7 @@ spec:
       labels:
         app: bootcamp-demo
         company: smart-hotel
-        service: python
         author: barsin
-        backend: false
-        frontend: true
-        exposed: true
     spec:
       containers:
       - name: bootcamp-demo
