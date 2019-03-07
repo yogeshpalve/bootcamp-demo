@@ -6,6 +6,8 @@ metadata:
     app: bootcamp-demo
     company: smart-hotel
     author: barsin
+  annotations:
+      custom: "annotation1"
 spec:
   replicas: 4
   selector:
