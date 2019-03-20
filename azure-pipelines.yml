@@ -13,22 +13,4 @@ variables:
   imageName: 'shashankbarsin/bootcamp-demo:$(build.buildId)'
 
 steps:
-- task: Docker@1
-  displayName: Container registry login
-  inputs:
-    command: login
-    containerregistrytype: Container Registry
-    dockerRegistryEndpoint: dockerHub
-- task: Docker@1
-  displayName: Build image
-  inputs:
-    command: build
-    dockerFile: app/Dockerfile
-    imageName: $(imageName)
-- task: Docker@1
-  displayName: Push image
-  inputs:
-    command: push
-    containerregistrytype: Container Registry
-    dockerRegistryEndpoint: dockerHub
-    imageName: $(imageName)
+- script: echo Hello
