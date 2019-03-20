@@ -14,3 +14,9 @@ variables:
 
 steps:
 - script: docker build -t developer-camp:dev ./app
+- task: Docker@1
+  displayName: Container registry login
+  inputs:
+    command: login
+    azureSubscriptionEndpoint: demo123
+    azureContainerRegistry: containerregistry54.azurecr.io
